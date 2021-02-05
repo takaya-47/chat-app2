@@ -1,9 +1,15 @@
+// 変数：色
 $navy: #253141;
 $light-navy: #2f3e51;
-$white: #ffffff;
+$off-white: #ffffff;
 $light-gray: #fafafa;
 $midium-gray: #dddddd;
+$user-name-color: #fafafa;
+$room-name-color: white;
+$button-color: deepskyblue;
+$button-border: lightblue;
 
+// ルートページ
 .wrapper {
   display: flex;
   height: 100vh;
@@ -13,15 +19,40 @@ $midium-gray: #dddddd;
     .side-header {
       height: 100px;
       padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .current-user-name {
+        font-size: 16px;
+        color: $user-name-color;
+      }
+      .make-chat {
+        .chat-button {
+          display: block;
+          padding: 14px;
+          font-size: 10px;
+          color: $button-color;
+          border: 1px solid $button-border;
+          text-decoration: none;
+        }
+      }
     }
     .side-content {
       background-color: $light-navy;
       height: calc(100vh - 100px);
       padding: 0 20px;
+      overflow: scroll;
+      .room-box {
+        padding: 20px 0 40px;
+        .room-name {
+          color: $room-name-color;
+          text-decoration: none;
+        }
+      }
     }
   }
   .main-container {
-    background-color: $white;
+    background-color: $off-white;
     width: calc(100vw - 300px);
     .main-header {
       height: 100px;
