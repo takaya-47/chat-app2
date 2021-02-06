@@ -1,42 +1,20 @@
 <div class="side-container">
+
   <div class="side-header">
     <div class="current-user-name">
       <%= link_to current_user.name, edit_user_path(current_user.id) %>
     </div>
     <div class="make-chat">
-      <a class="chat-button" href="#">チャットを作成する</a>
+      <%= link_to "チャットを作成する", new_room_path, class: "chat-button" %>
     </div>
   </div>
+
   <div class="side-content">
+    <% current_user.rooms.each do |room|%>
     <div class="room-box">
-      <a class="room-name" href=" #">techroom1</a>
+      <%= link_to room.name, "#", class: "room-name" %>
     </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom2</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom3</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom4</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom5</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom6</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom7</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom8</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom9</a>
-    </div>
-    <div class="room-box">
-      <a class="room-name" href=" #">techroom10</a>
-    </div>
+    <% end %>
   </div>
+
 </div>
