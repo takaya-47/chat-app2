@@ -12,7 +12,7 @@
   <div class="side-content">
     <% current_user.rooms.each do |room|%>
     <div class="room-box">
-      <%= link_to room.name, "#", class: "room-name" %>
+      <%= link_to room.name, room_messages_path(room), class: "room-name" %>
     </div>
     <% end %>
   </div>
